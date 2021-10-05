@@ -231,7 +231,7 @@ func (c *Command) Run(args []string) int {
 		}
 	}()
 
-	injector.Log.Info("Starting handler..")
+	injector.Log.Info("Starting glass handler..")
 
 	c.UI.Info(fmt.Sprintf("Listening on %q...", c.flagListen))
 	if err := server.ListenAndServeTLS(c.flagCertFile, c.flagKeyFile); err != nil {
