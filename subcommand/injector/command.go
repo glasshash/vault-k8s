@@ -209,7 +209,7 @@ func (c *Command) Run(args []string) int {
 	server := &http.Server{
 		Addr:      c.flagListen,
 		Handler:   handler,
-		TLSConfig: &tls.Config{GetCertificate: c.getCertificate, MinVersion: VersionTLS13},
+		TLSConfig: &tls.Config{GetCertificate: c.getCertificate, MinVersion: tls.VersionTLS13},
 		ErrorLog:  logger.StandardLogger(&hclog.StandardLoggerOptions{ForceLevel: hclog.Error}),
 	}
 
